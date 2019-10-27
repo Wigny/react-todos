@@ -6,7 +6,7 @@ import gql from "graphql-tag";
 class TodoList extends Component {
   renderTodoList = () => (
     <ul>
-      {this.props.todos.todo.map(todo => (
+      {this.props.todos.todos.map(todo => (
         <li key={todo.id}>{todo.text}</li>
       ))}
     </ul>
@@ -28,7 +28,7 @@ class TodoList extends Component {
 
 const TodosQuery = gql`
   query getMyTodos {
-    todo {
+    todos {
       id
       text
     }
